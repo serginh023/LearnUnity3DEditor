@@ -1,13 +1,21 @@
 ﻿using UnityEditor;
+using UnityEngine;
 
-[CustomEditor(typeof(Level))]
-public class LevelEditor: Editor
+namespace Editor
 {
-    public override void OnInspectorGUI()
+    [CustomEditor(typeof(Level))]
+    public class LevelEditor: UnityEditor.Editor
     {
-        DrawDefaultInspector();
-        Level myTarget = (Level) target;
-        EditorGUILayout.LabelField("Level:", myTarget.GetLevel.ToString());
-        EditorGUILayout.HelpBox("A help box.", MessageType.Warning);
+        public override void OnInspectorGUI()
+        {
+            DrawDefaultInspector();
+            Level myTarget = (Level) target;
+            EditorGUILayout.LabelField("Level:", myTarget.GetLevel.ToString());
+            if (GUILayout.Button("Press to scream"))
+            {
+                myTarget.ObjectScream();
+            }
+            EditorGUILayout.HelpBox("A help box.", MessageType.Warning);
+        }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Level : MonoBehaviour
 {
@@ -10,5 +9,10 @@ public class Level : MonoBehaviour
     public int GetLevel
     {
         get => experience / xpForEachLevel;
+    }
+
+    public void ObjectScream()
+    {
+        Debug.Log("Ahhhhhhhhh");
     }
 }
