@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    [SerializeField] private int level;
-    [SerializeField] private int experience;
-    [SerializeField] private int xpToLevelUp;
-    
+    [SerializeField] private int xpForEachLevel;
+    private int level;
+    public int experience;
+
     public int GetLevel
     {
-        get => experience / xpToLevelUp;
+        get => experience / xpForEachLevel;
     }
 }
